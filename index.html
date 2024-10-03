@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <script src="js/main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="w-ful h-screen flex flex-col">
+    <div class="bg-white w-full h-full flex flex-col items-center">
+        <div class="flex items-center"> <!-- Contenedor flex para alinear el h1 y la imagen -->
+            <h1 class="text-[2rem] text-black font-bold mr-4"> <!-- Espaciado a la derecha del h1 -->
+                AutoPro estadísticas
+            </h1>
+            <img src="images/car-accesories-192x192.png" alt="Descripción de la imagen" class="w-16 h-16" /> <!-- Ajusta el tamaño de la imagen según sea necesario -->
+        </div>
+        <div class="w-full h-full">
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+       </div>
+</body>
+</html>
